@@ -1,11 +1,3 @@
-/*A FAIRE
-	-Corriger bug quand on pose les pions rapidement
-	-Faire la stratégie miximisante (difficile) et random (moyen)
-	-Faire passer le tour d'un joueur s'il ne peut pas poser de pions -> si les deux joueurs ne peuvent pas (plateau pas forcément rempli): la partie est finie (faire les deux fonctions)
-	-Changer images!!!
-	-Faire les points (nbr de couleurs pour chaque joueur en temps réel) + affichages (victoire, defaite, blocage...)
-*/
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.Color;
@@ -78,7 +70,7 @@ public class Plateau extends JPanel implements ActionListener{
 		timer.schedule(
 			new TimerTask(){
 				public void run() {
-					if(test){	//POUR QUE LE L'IA COMMENCE SI LE JOUEUR CHOISI LES NOIRS
+					if(test){	
 						test=false;
 						un_tour();
 					}
@@ -571,7 +563,7 @@ public class Plateau extends JPanel implements ActionListener{
 			if(posExiste(x2,y2) && c.estAllie(cases[x2][y2])){
 				x2--;
 				y2--;
-				while(x2!=x){ //on peut rajouter "y2!=y" avec && ou || je crois mais inutile LOGIQUEMENT
+				while(x2!=x){ 
 					cases[x2][y2].change();
 					x2--;
 					y2--;
@@ -588,7 +580,7 @@ public class Plateau extends JPanel implements ActionListener{
 			if(posExiste(x2,y2) && c.estAllie(cases[x2][y2])){
 				x2--;
 				y2++;
-				while(x2!=x){ //on peut rajouter "y2!=y" avec && ou || je crois mais inutile LOGIQUEMENT
+				while(x2!=x){ 
 					cases[x2][y2].change();
 					x2--;
 					y2++;
@@ -605,7 +597,7 @@ public class Plateau extends JPanel implements ActionListener{
 			if(posExiste(x2,y2) && c.estAllie(cases[x2][y2])){
 				x2++;
 				y2++;
-				while(x2!=x){ //on peut rajouter "x2!=x" avec && ou || je crois mais inutile LOGIQUEMENT
+				while(x2!=x){ 
 					cases[x2][y2].change();
 					x2++;
 					y2++;
@@ -622,7 +614,7 @@ public class Plateau extends JPanel implements ActionListener{
 			if(posExiste(x2,y2) && c.estAllie(cases[x2][y2])){
 				x2++;
 				y2--;
-				while(y2!=y){ //on peut rajouter "x2!=x" avec && ou || je crois mais inutile LOGIQUEMENT
+				while(y2!=y){
 					cases[x2][y2].change();
 					x2++;
 					y2--;
